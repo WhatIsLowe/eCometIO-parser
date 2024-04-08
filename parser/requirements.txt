@@ -1,0 +1,4 @@
+requests
+asyncpg
+aiohttp
+python-dateutil
