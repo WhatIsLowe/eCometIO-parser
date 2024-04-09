@@ -75,5 +75,16 @@ docker compose up (для Unix)
 ```
 
 ## Способ 3 - Деплой на Yandex Cloud
-+ Можно развернуть приложение в ручном режиме, через Web-приложение
-+ Либо, развернуть в автоматическом режиме, при помоши скрипта `deploy.sh`
+Парсер можно развернуть на Yandex Cloud Function при помощи скрипта `deploy_parser_yc.sh`
+Для этого:
+  1. Необходимо установить и настроить Yandex Cloud CLI согласно [официальной документации](https://yandex.cloud/ru/docs/cli/quickstart#linux_1)
+  2. Убедиться что установлен Docker и Docker Compose
+  3. Настроить Docker при помощи команды ```yc container registry configure-docker```
+  4. Убедиться что пользователь добавлен в [docker-группу](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
+  5. Выполнить авторизацию Docker в Yandex Container Registry [любым удобным способом](https://yandex.cloud/en/docs/container-registry/operations/authentication)
+  6. Отредактировать скрипт `deploy_parser_yc.sh` установив собсвтенные значения для подключения к БД и ID сервисного аккаунта
+  7. Выдать права запуска скрипту и запустить
+```bash
+chmod +x deploy_parser_yc.sh
+./deploy_parser_yc.sh
+``` 
