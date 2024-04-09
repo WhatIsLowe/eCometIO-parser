@@ -2,3 +2,4 @@ requests
 asyncpg
 aiohttp
 python-dateutil
+pydantic
